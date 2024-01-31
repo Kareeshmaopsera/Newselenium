@@ -1,6 +1,36 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+            <dependencies>
+                
+            </dependencies>
+            <configuration>
+                <suiteXmlFiles>
+                    <suiteXmlFile>testng.xml</suiteXmlFile>
+                </suiteXmlFiles>
+            </configuration>
+            <executions>
+                <execution>
+                    <id>run-tests</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>test</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+ 
+
+
+
   <groupId>SeleniumJavaFrameowork</groupId>
   <artifactId>SeleniumFrameowork</artifactId>
   <version>0.0.1-SNAPSHOT</version>
@@ -26,6 +56,13 @@
   		<groupId>org.slf4j</groupId>
   		<artifactId>slf4j-api</artifactId>
   		<version>1.7.2</version>
+  	</dependency>
+
+  	<dependency>
+  		<groupId>org.testng</groupId>
+  		<artifactId>testng</artifactId>
+  		<version>7.4.0</version>
+  		<scope>test</scope>
   	</dependency>
   </dependencies>
 </project>
